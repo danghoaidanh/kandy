@@ -1,3 +1,6 @@
+var audioURL = $(location).attr('host');
+console.log(audioURL);
+console.log(audioURL+'/firework.mp3');
 var playInputStream = document.querySelector('button#play-audio');
 var soundSource;
 // begin record audio/ record th remote steam below
@@ -98,7 +101,8 @@ function HTTP_GET(url, callback) {
 // invoke above "HTTP_GET" method
 // to load mp3 as array-buffer
 function playAudio(){
-    HTTP_GET('https://localhost:4443/firework.mp3', function(array_buffer) {
+
+    HTTP_GET(audioURL+'/firework.mp3', function(array_buffer) {
 
         // Import callback function that provides PCM audio data decoded as an audio buffer
         context.decodeAudioData(array_buffer, function(buffer) {
