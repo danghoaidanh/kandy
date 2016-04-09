@@ -102,7 +102,7 @@ function HTTP_GET(url, callback) {
 // to load mp3 as array-buffer
 function playAudio(){
 
-    HTTP_GET(audioURL+'/firework.mp3', function(array_buffer) {
+    HTTP_GET('/firework.mp3', function(array_buffer) {
 
         // Import callback function that provides PCM audio data decoded as an audio buffer
         context.decodeAudioData(array_buffer, function(buffer) {
